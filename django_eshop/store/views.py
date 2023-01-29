@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from matplotlib.style import context
+
 
 # Store view
 def store(request):

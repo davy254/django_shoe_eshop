@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row p-5">
+            <div class="col-lg-6 check-out-container ">
+                <div class="box-element" id="form-wrapper">
+        
+                    <form id="form">
+                        <div id="user-info">
+                            <p>Customer Information: </p>
+                            <div class="form-field">
+                                <input required type="text" class="form-control" name="name" placeholder="Name...">
+                            </div>
+                            <div class="form-field">
+                                <input required type="text" class="form-control" name="email" placeholder="Email address...">
+                            </div>
+                        </div>
+                        <div id="shipping-info">
+                            <hr>
+                            <p>Shipping Information: </p>
+                            <div class="form-field">
+                                <input class="form-control" name="address" placeholder="Address..." type="text">
+                            </div>
+                            <div class="form-field">
+                                <input class="form-control" name="city" placeholder="City..." type="text">
+                            </div>
+                            <div class="form-field">
+                                <input class="form-control" name="state" placeholder="State..." type="text">
+                            </div>
+                            <div class="form-field">
+                                <input class="form-control" name="zipcode" placeholder="ZipCode..." type="text">
+                            </div>
+                        </div>
+        
+                        <hr>
+                        <input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
+                    </form>
+                </div>
+        
+                <br>
+        
+                <div class="box-element hidden " id="payment-info">
+                    <small>Paypall Options</small>
+                    <a href="{% url 'store' %}"><button id="make-payment" class="btn btn-success ">Make Payment</button></a>
+                </div>
+            </div>
+        
+            <div class="col-lg-6 check-out-container ">
+                <div class="box-element">
+                    <a class="btn btn-outline-dark " href="{% url 'cart' %}">&#x2190 Back to Cart</a>
+                    <hr>
+                    <h3>Order Summary</h3>
+                    <hr>
+                    <table class="table">
+                        <thead>
+                            <tr class="row">
+                                <th style="flex:2"></th>
+                                <th style="flex:3"><strong>Item</strong></th>
+                                <th  style="flex:3"><strong>Price</strong></th>
+                                <th  style="flex:2"><strong>Quantity</strong></th>
+                                <th  style="flex:3"><strong>Total</strong></th>
+                            </tr>
+                        </thead>
+                    
+        
+                        
+                        <tbody >
+                            <tr class="row">
+                                <td style="flex:2"><img class="row-image" src="{{ item.product.product_image.url }}" alt=""></td>
+                                <td style="flex:3">
+                                    <p>boots</p>
+                                </td>
+                                <td style="flex:3">
+                                    <p>Ksh. 899</p>
+                                </td>
+                                <td style="flex:2">
+                                    <p>x7</p>
+                                </td>
+                                <td style="flex:3">
+                                    <p>sh. 888</p>
+                                </td>
+                            </tr>
+            
+                        </tbody>
+                    </table>
+                    
+        
+        
+                    <div class="row">
+                        <div style="flex:2">
+                            <p><strong></strong></p>
+                        </div>
+                        <div style="flex:3">
+                            <p></p>
+                        </div>
+                        <div style="flex:2">
+                            <p>
+                            <h5>Total</h5>
+                            </p>
+                        </div>
+        
+                        <div style="flex:3">
+                            <p>
+                            <h5>Ksh. 9999</h5>
+                            </p>
+                        </div>
+                    </div>
+        
+        
+                </div>
+        
+            </div>
+        </div>
+
+
+
+{% endblock  %}
+
+
+
+
