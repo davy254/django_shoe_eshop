@@ -1,4 +1,4 @@
-from statistics import mode
+import uuid
 from django.db import models
 from django.contrib.auth.models import User
 from sqlalchemy import true
@@ -20,3 +20,13 @@ class Product(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+# Order model
+class Order(models.Model):
+    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
+    date_ordered = models.DateTimeField(auto_now_add=True)
+    complete = models.BooleanField(default=False)
+    transaction_id = models.UUIDField(default=uuid.uuid4, editable=False)
+
+    def __str__(self) -> str:
+        return str(self.id)
