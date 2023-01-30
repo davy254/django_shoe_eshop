@@ -12,3 +12,11 @@ class Customer(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+# Product model
+class Product(models.Model):
+    name = models.CharField(max_length=200)
+    price = models.FloatField()
+
+    def __str__(self) -> str:
+        return self.name
