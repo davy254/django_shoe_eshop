@@ -53,8 +53,10 @@
     </main>
     <footer></footer>
    
-  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'js/cart.js' %}"></script>  
-
+  <script src="{% static 'js/bootstrap.min.js' %}"></script> 
+  <script type="text/javascript"> 
+        let user = '{{ request.user }}'
+  </script> 
+ <script src="{% static 'js/cart.js' %}"></script>
 </body>
 </html>
